@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset='utf-8'>
+    <title>Formulario de registro </title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+    <h1>Registrar supervisor</h1>
+    <form action="registrar.php" method="POST" class="form-register">
+    <h2 class="form__titulo">Crear una cuenta</h2>
+    <div class="contededor-inputs">
+        <input type="text" name="Identificación" placeholder="Identificación" class="input-48" required>
+        <input type="text" name="Nombres_Apellidos" placeholder="Nombres y Apellidos" class="input-48" required>
+        <input type="email" name="correo" placeholder="correo" class="input-48"required>
+        <input type="" name="direccion" placeholder="Dirección" class="input-48"required>
+        <input type="text" name="telefono" placeholder="Telefono"class="input-48"required> 
+        <select name="tipo_usuario" class="select-48">
+            <option>--Seleccione--</option> 
+            <option>Gerente</option>
+            <option>Supervisor</option>
+            <option>Domiciliario</option>
+            <option>Empleado</option>
+        </select>
+        <input type="text" name="usuario" placeholder="Nombre de usuario" class="input-48"required>
+        <input type="password" name="clave" placeholder="Contraseña" class="input-48"required>
+        <input type="submit" name="enviar" value="Registrar" class="btn-enviar">
+        <p class="form__link"><a href="examples/dashboard.php">Regresar</a></p>
+    </div>
+</form>
+</body>
+</html>
