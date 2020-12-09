@@ -1,50 +1,46 @@
 <?php
+    include_once 'conexion/conexion_login.php';
+    
+    session_start();
+    
+    if(isset($_SESSION['rol'])){
+        switch($_SESSION['rol']){
+            case 1:
+                header('location: index.php');
+            break;
 
-require "conexion.php";
+            case 2:
+            	header('location: index2.php');
+            break;
 
-session_start();
-if($_POST){
-$username = $_POST['username'];
-$pass = $_POST['pass'];
+			case 3:
+            	header('location: index3.php');
+            break;
+            default:
+        }
+    }
 
-$sql = "SELECT Identificación, Clave, Nombre_apellidos, Tipo_usuario FROM usuarios WHERE Nombre_Usuario='$username'"; 
-//var_dump($sql);
-$resultado=$conexion->query($sql);
-$num = $resultado->num_rows;
-	if($num>0){
-		$row = $resultado->fetch_assoc();
-		$password_bd = $row['Clave']; 
-		$pass_c = sha1($pass);
-
-			if($password_bd == $pass_c){
-				$_SESSION['Identificación'] = $row['Identificación'];
-				$_SESSION['nombre'] = $row['Nombre_apellidos'];
-				$_SESSION['Tipo de usuario'] = $row['Tipo_usuario'];
-				header("Location:index.php");
-
-			}else{
-				echo"La contraseña no coincide";
-			}
-	}else{
-		echo"No existe Usuario";
-	}
-}
 ?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 	<title>Iniciar Sesion</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="icon" href="imagesLogin/logo.png" type="image/x-icon" />
+	
 <!--===============================================================================================-->	
-	<link rel="icon" type="image/png" href="imagesLogin/icons/favicon.ico"/>
+	<link rel="icon" type="image/png" href="images/icon/cerveza.png" />
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="vendorLogin/bootstrap/css/bootstrap.min.css">
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="fontsLogin/font-awesome-4.7.0/css/font-awesome.min.css">
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="fontsLogin/iconic/css/material-design-iconic-font.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="fontsLogin/poppins/Poppins-Medium.ttf">
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="vendorLogin/animate/animate.css">
 <!--===============================================================================================-->	
@@ -58,6 +54,7 @@ $num = $resultado->num_rows;
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="cssLogin/util.css">
 	<link rel="stylesheet" type="text/css" href="cssLogin/main.css">
+	
 <!--===============================================================================================-->
 </head>
 <body>
@@ -65,54 +62,96 @@ $num = $resultado->num_rows;
 	<div class="limiter">
 		<div class="container-login100" style="background-image: url('imagesLogin/bg-02.jpg');">
 			<div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-54">
-				<form method="POST" action="<?php echo $_SERVER['PHP_SELF'];?>" class="login100-form validate-form">
+				<form method="POST" action="<?php echo $_SERVER['PHP_SELF'];?>" class="login100-form validate-form" autocomplete="off">
+				
+					<center>
+					<img class="" src="imagesLogin/logo.png" alt="AVATAR">
+					</center>
 					<span class="login100-form-title p-b-49">
-						Iniciar Sesion
-						<img class="" src="imagesLogin/logo.png" alt="AVATAR">
-					</span>
-					<span >
+
+						<h3>Iniciar Sesión</h3>
 						
 					</span>
-
-					<div class="wrap-input100 validate-input m-b-23" data-validate = "Username is reauired">
+					
+					<div class="wrap-input100 validate-input m-b-23" data-validate = "Ingrese un usuario">
 						<span class="label-input100">Usuario</span>
 						<input class="input100" type="text" name="username" placeholder="Usuario">
 						<span class="focus-input100" data-symbol="&#xf206;"></span>
 					</div>
 
-					<div class="wrap-input100 validate-input" data-validate="Password is required">
+					<div class="wrap-input100 validate-input" data-validate="Ingrese una contraseña">
 						<span class="label-input100">Contraseña</span>
-						<input class="input100" type="password" name="pass" placeholder="Contraseña">
+						<input class="input100" type="password" name="password" placeholder="Contraseña">
 						<span class="focus-input100" data-symbol="&#xf190;"></span>
 					</div>
 					
 					<div class="text-right p-t-8 p-b-31">
-						<a href="#">
+						<a href="forget-pass.php">
 							Olvidaste tu contraseña?
 						</a>
 					</div>
-					
+					<?php
+					if(isset($_POST['username']) && isset($_POST['password'])){
+						$username = $_POST['username'];
+						$password = $_POST[('password')];
+
+						$bd = new Database();
+						$query = $bd->connect()->prepare('SELECT * FROM usuarios WHERE usuario = :username AND contraseña = :password');
+						$query->execute(['username' => $username, 'password' => sha1($password)]);
+
+						$row = $query->fetch(PDO::FETCH_NUM);
+
+						
+						
+						if($row == true){
+							
+							$rol = $row[3];
+							
+							$_SESSION['rol'] = $rol;
+							switch($rol){
+								case 1:
+									
+									header('location: index.php');
+								break;
+
+								case 2:
+									header('location: index2.php');
+								break;
+								
+								case 3:
+									header('location: index3.php');
+								break;
+								case 4:
+									header('location: index4.php');
+								break;
+
+								default:
+							}
+						}else{
+							// no existe el usuario
+							echo '<div class="alert alert-danger alert-dismissable">
+							<button type="button" class="close" data-dismiss="alert">&times;</button>
+							El usuario o la contraseña son incorrectos
+						  </div>';
+						}
+
+						
+
+					}
+					?>
 					<div class="container-login100-form-btn">
 						<div class="wrap-login100-form-btn">
 							<div class="login100-form-bgbtn"></div>
 							<button class="login100-form-btn">
+							<span class="spinner-border spinner-border-sm mr-2"></span>
 								Ingresar
 							</button>
 						</div>
 					</div>
-
+					
 					
 
 					
-					<div class="flex-col-c p-t-155">
-						<span class="txt1 p-b-17">
-							O registrate usando
-						</span>
-
-						<a href="#" class="txt2">
-							Registrarse
-						</a>
-					</div>
 				</form>
 			</div>
 		</div>

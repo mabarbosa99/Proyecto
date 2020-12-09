@@ -364,6 +364,7 @@ section {
     margin-right: 8px;
 }
 
+
 .login-checkbox > label > a {
     color: #ff2e44;
 }
@@ -462,15 +463,15 @@ section {
 
 .au-btn:hover {
     color: #fff;
-    background: #3868cd;
+    background: #E6B531;
 }
 
 .au-btn--blue2 {
-    background: #00aced;
+    background: #E6B531;
 }
 
 .au-btn--blue2:hover {
-    background: #00a2e3;
+    background: #E6B531;
 }
 
 .au-btn--block {
@@ -484,22 +485,22 @@ section {
 }
 
 .au-btn--blue {
-    background: #4272d7;
+    background: #E6B531;
 }
 
 .au-btn--green {
-    background: #63c76a;
+    background: #E6B531;
 }
 
 .au-btn--green:hover {
-    background: #59bd60;
+    background: #E6B531;
 }
 
 .au-btn-plus {
     position: absolute;
     height: 45px;
     width: 45px;
-    background: #63c76a;
+    background: #E6B531;
     -webkit-border-radius: 100%;
     -moz-border-radius: 100%;
     border-radius: 100%;
@@ -527,7 +528,7 @@ section {
 }
 
 .au-btn-plus:hover {
-    background: #59bd60;
+    background: #E6B531;
 }
 
 .au-btn-load {
@@ -1538,7 +1539,7 @@ section {
 }
 
 .account-dropdown__item a:hover {
-    background:#D5CD35;
+    background:#E6B531;
     color: #fff;
 }
 
@@ -1565,7 +1566,7 @@ section {
 }
 
 .account-dropdown__footer a:hover {
-    background: #D5CD35;
+    background: #E6B531;
     color: #fff;
 }
 
@@ -1619,9 +1620,9 @@ section {
 
 .menu-sidebar__content {
     position: relative;
-    height: -webkit-calc(100vh - 75px);
-    height: -moz-calc(100vh - 75px);
-    height: calc(100vh - 75px);
+    height: -webkit-calc(80vh - 75px);
+    height: -moz-calc(80vh - 75px);
+    height: calc(80vh - 75px);
 }
 
 .navbar-sidebar {
@@ -1641,11 +1642,11 @@ section {
 }
 
 .navbar-sidebar .navbar__list li a:hover {
-    color: #D5CD35;
+    color: #E6B531;
 }
 
 .navbar-sidebar .navbar__list li.active > a {
-    color: #D5CD35;
+    color: #E6B531;
 }
 
 .has-sub {
@@ -1758,7 +1759,7 @@ section {
 }
 
 .header-mobile .navbar-mobile .navbar-mobile__list li a:hover {
-    color: #D5CD35;
+    color: #E6B531;
 }
 
 .header-mobile .navbar-mobile .navbar-mobile__list li a > i {
@@ -1921,7 +1922,7 @@ section {
     text-transform: capitalize;
     text-align: center;
     font-size: 14px;
-    color: #D5CD35;
+    color: #E6B531;
     padding: 24px 0;
 }
 
@@ -3133,10 +3134,10 @@ section {
 }
 
 .overview-item {
-    -webkit-border-radius: 10px;
-    -moz-border-radius: 10px;
-    border-radius: 10px;
-    padding: 30px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    border-radius: 20px;
+    padding: 60px;
     padding-bottom: 0;
     -webkit-box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.1);
     -moz-box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.1);
@@ -3146,33 +3147,33 @@ section {
 
 @media (min-width: 992px) and (max-width: 1519px) {
     .overview-item {
-        padding-left: 15px;
-        padding-right: 15px;
+        padding-left: 10px;
+        padding-right: 10px;
     }
 }
 
 .overview-item--c1 {
-    background-image: -moz-linear-gradient(90deg, #e7dc45 0%, #fc466b 100%);
-    background-image: -webkit-linear-gradient(90deg, #e7dc45 0%, #fc466b 100%);
-    background-image: -ms-linear-gradient(90deg, #e7dc45 0%, #fc466b 100%);
+    background-image: -moz-linear-gradient(90deg, #ffffff 0%, #ffffff 100%);
+    background-image: -webkit-linear-gradient(90deg, #ffffff 0%, #ffffff 100%);
+    background-image: -ms-linear-gradient(90deg, #ffffff 0%, #ffffff 100%);
 }
 
 .overview-item--c2 {
-    background-image: -moz-linear-gradient(90deg, #11998e 0%, #38ef7d 100%);
-    background-image: -webkit-linear-gradient(90deg, #11998e 0%, #38ef7d 100%);
-    background-image: -ms-linear-gradient(90deg, #11998e 0%, #38ef7d 100%);
+    background-image: -moz-linear-gradient(90deg, #ffffff 0%, #ffffff 100%);
+    background-image: -webkit-linear-gradient(90deg, #ffffff 0%, #ffffff 100%);
+    background-image: -ms-linear-gradient(90deg, #ffffff 0%, #ffffff 100%);
 }
 
 .overview-item--c3 {
-    background-image: -moz-linear-gradient(90deg, #ee0979 0%, #ff6a00 100%);
-    background-image: -webkit-linear-gradient(90deg, #ee0979 0%, #ff6a00 100%);
-    background-image: -ms-linear-gradient(90deg, #ee0979 0%, #ff6a00 100%);
+    background-image: -moz-linear-gradient(90deg, #ffffff 0%, #ffffff 100%);
+    background-image: -webkit-linear-gradient(90deg, #ffffff 0%, #ffffff 100%);
+    background-image: -ms-linear-gradient(90deg, #ffffff 0%, #ffffff 100%);
 }
 
 .overview-item--c4 {
-    background-image: -moz-linear-gradient(90deg, #45b649 0%, #dce35b 100%);
-    background-image: -webkit-linear-gradient(90deg, #45b649 0%, #dce35b 100%);
-    background-image: -ms-linear-gradient(90deg, #45b649 0%, #dce35b 100%);
+    background-image: -moz-linear-gradient(90deg, #ffffff 0%, #ffffff 100%);
+    background-image: -webkit-linear-gradient(90deg, #ffffff 0%, #ffffff 100%);
+    background-image: -ms-linear-gradient(90deg, #ffffff 0%, #ffffff 100%);
 }
 
 .overview-box .icon {
@@ -3183,7 +3184,7 @@ section {
 
 .overview-box .icon i {
     font-size: 60px;
-    color: #fff;
+    color: #E6B531;
 }
 
 @media (min-width: 992px) and (max-width: 1199px) {
@@ -4489,7 +4490,7 @@ section {
 
 .table-data2.table thead th {
     font-size: 12px;
-    color: #555;
+    color: #000;
     text-transform: uppercase;
     border: none;
     font-weight: 600;
@@ -4672,16 +4673,26 @@ section {
 .table-data3 thead {
     background: #333;
 }
+.table-data4 thead {
+    background: #333;
+}
 
 .table-data3 thead tr th {
     font-size: 16px;
     color: #fff;
     font-weight: 400;
     text-transform: capitalize;
-    padding: 18px 40px;
+    padding: 18px 100px;
     padding-right: 10px;
 }
-
+.table-data4 thead tr th {
+    font-size: 16px;
+    color: #fff;
+    font-weight: 400;
+    text-transform: capitalize;
+    padding: 18px 45px;
+    padding-right: 10px;
+}
 .table-data3 thead tr th:first-child {
     -webkit-border-top-left-radius: 3px;
     -moz-border-radius-topleft: 3px;
@@ -4726,10 +4737,17 @@ section {
     background: #fff;
     font-size: 14px;
     color: #808080;
-    padding: 12px 40px;
+    padding: 12px 100px;
     padding-right: 10px;
 }
-
+.table-data4 tbody td {
+    border-bottom: 1px solid #f5f5f5;
+    background: #fff;
+    font-size: 14px;
+    color: #808080;
+    padding: 12px 45px;
+    padding-right: 10px;
+}
 .table-data3 tbody td.process {
     color: #00ad5f;
 }

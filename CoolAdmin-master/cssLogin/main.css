@@ -44,7 +44,7 @@ body, html {
 
 /*---------------------------------------------*/
 a {
-	font-family: Poppins-Regular;
+	font-family: sans-serif;
 	font-size: 14px;
 	line-height: 1.7;
 	color: #666666;
@@ -136,14 +136,14 @@ iframe {
 /*//////////////////////////////////////////////////////////////////
 [ Utility ]*/
 .txt1 {
-  font-family: Poppins-Regular;
+  font-family: sans-serif;
   font-size: 14px;
   line-height: 1.5;
   color: #666666;
 }
 
 .txt2 {
-  font-family: Poppins-Regular;
+  font-family: sans-serif;
   font-size: 14px;
   line-height: 1.5;
   color: #333333;
@@ -206,7 +206,7 @@ iframe {
 
 .login100-form-title {
   display: block;
-  font-family: Poppins-Bold;
+  font-family: sans-serif;
   font-size: 39px;
   color: #333333;
   line-height: 1.2;
@@ -225,7 +225,7 @@ iframe {
 }
 
 .label-input100 {
-  font-family: Poppins-Regular;
+  font-family: sans-serif;
   font-size: 14px;
   color: #333333;
   line-height: 1.5;
@@ -344,11 +344,11 @@ iframe {
   z-index: -1;
   width: 300%;
   height: 100%;
-  background: #348AD2;
-  background: -webkit-linear-gradient(right, #348AD2, #348AD2, #348AD2, #348AD2);
-  background: -o-linear-gradient(right, #348AD2, #348AD2, #348AD2, #348AD2);
-  background: -moz-linear-gradient(right, #348AD2, #348AD2, #348AD2, #348AD2);
-  background: linear-gradient(right, #348AD2, #348AD2, #348AD2, #348AD2);
+  background: #E6B531;
+  background: -webkit-linear-gradient(right, #E6B531, #E6B531, #E6B531, #E6B531);
+  background: -o-linear-gradient(right, #E6B531, #E6B531, #E6B531, #E6B531);
+  background: -moz-linear-gradient(right, #E6B531, #E6B531, #E6B531, #E6B531);
+  background: linear-gradient(right, #E6B531, #E6B531, #E6B531, #E6B531);
   top: 0;
   left: -100%;
 
@@ -359,7 +359,7 @@ iframe {
 }
 
 .login100-form-btn {
-  font-family: Poppins-Medium;
+  font-family: sans-serif;
   font-size: 16px;
   color: #fff;
   line-height: 1.2;

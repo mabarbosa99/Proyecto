@@ -1,8 +1,10 @@
 <?php
       session_start();
-    
+      if (!isset($_SESSION['Identificación'])){
+        header("location:login.php");
+      }
       $nombre = $_SESSION['nombre'];
-      
+    
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -65,10 +67,10 @@
                     <ul class="navbar-mobile__list list-unstyled">
                         <li class="has-sub">
                             <a class="js-arrow" href="#">
-                                <i class="fas fa-tachometer-alt"></i>Dashboard</a>
+                                <i class="fas fa-tachometer-alt"></i>Inicio</a>
                             <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
                                 <li>
-                                    <a href="index.php">Dashboard 1</a>
+                                    <a href="index.php">Inicio</a>
                                 </li>
                                 <li>
                                     <a href="index2.html">Dashboard 2</a>
@@ -83,25 +85,25 @@
                         </li>
                         <li>
                             <a href="chart.php">
-                                <i class="fas fa-chart-bar"></i>Charts</a>
+                                <i class="fas fa-chart-bar"></i>Registrar Supervisor</a>
                         </li>
                         <li>
                             <a href="table.php">
-                                <i class="fas fa-table"></i>Tables</a>
+                                <i class="fas fa-table"></i>Inactivar Supervisor</a>
                         </li>
                         <li>
                             <a href="form.php">
-                                <i class="far fa-check-square"></i>Forms</a>
+                                <i class="far fa-check-square"></i>Registrar Producto</a>
                         </li>
                         <li>
                             <a href="calendar.php">
-                                <i class="fas fa-calendar-alt"></i>Calendar</a>
+                                <i class="fas fa-calendar-alt"></i>Inactivar Producto</a>
                         </li>
                         <li>
                             <a href="map.php">
-                                <i class="fas fa-map-marker-alt"></i>Maps</a>
+                                <i class="fas fa-map-marker-alt"></i>Registrar Info del Cliente</a>
                         </li>
-                        <li class="has-sub">
+                        <!--<li class="has-sub">
                             <a class="js-arrow" href="#">
                                 <i class="fas fa-copy"></i>Pages</a>
                             <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
@@ -154,7 +156,7 @@
                                     <a href="typo.html">Typography</a>
                                 </li>
                             </ul>
-                        </li>
+                        </li>-->
                     </ul>
                 </div>
             </nav>
@@ -173,10 +175,10 @@
                     <ul class="list-unstyled navbar__list">
                         <li class="has-sub">
                             <a class="js-arrow" href="#">
-                                <i class="fas fa-tachometer-alt"></i>Dashboard</a>
+                                <i class="fas fa-tachometer-alt"></i>Inicio</a>
                             <ul class="list-unstyled navbar__sub-list js-sub-list">
                                 <li>
-                                    <a href="index.php">Dashboard 1</a>
+                                    <a href="index.php">Inicio</a>
                                 </li>
                                 <li>
                                     <a href="index2.html">Dashboard 2</a>
@@ -189,27 +191,24 @@
                                 </li>
                             </ul>
                         </li>
-                        <li>
-                            <a href="chart.php">
-                                <i class="fas fa-chart-bar"></i>Charts</a>
+                        <li class="active">
+                            <a href="map.php">
+                                <i class="fas fa-map-marker-alt"></i>Registrar Info del Cliente</a>
                         </li>
                         <li>
                             <a href="table.php">
-                                <i class="fas fa-table"></i>Tables</a>
+                                <i class="fas fa-table"></i>Info del Cliente</a>
                         </li>
                         <li>
                             <a href="form.php">
-                                <i class="far fa-check-square"></i>Forms</a>
+                                <i class="far fa-check-square"></i>Registrar Producto</a>
                         </li>
                         <li>
                             <a href="calendar.php">
-                                <i class="fas fa-calendar-alt"></i>Calendar</a>
+                                <i class="fas fa-calendar-alt"></i>Inactivar Producto</a>
                         </li>
-                        <li class="active">
-                            <a href="map.php">
-                                <i class="fas fa-map-marker-alt"></i>Maps</a>
-                        </li>
-                        <li class="has-sub">
+                     
+                        <!--<li class="has-sub">
                             <a class="js-arrow" href="#">
                                 <i class="fas fa-copy"></i>Pages</a>
                             <ul class="list-unstyled navbar__sub-list js-sub-list">
@@ -262,7 +261,7 @@
                                     <a href="typo.html">Typography</a>
                                 </li>
                             </ul>
-                        </li>
+                        </li>-->
                     </ul>
                 </nav>
             </div>
@@ -434,7 +433,7 @@
                                                 </div>
                                             </div>
                                             <div class="account-dropdown__footer">
-                                                <a href="#">
+                                                 <a href="logout.php">
                                                     <i class="zmdi zmdi-power"></i>Logout</a>
                                             </div>
                                         </div>
@@ -450,105 +449,63 @@
             <div class="main-content">
                 <div class="section__content section__content--p30">
                     <div class="container-fluid">
+                    <div class="overview-wrap">
+                                          <h2 class="title-1">Registrar Información del Cliente</h2>
+                                           <button class="au-btn au-btn-icon au-btn--blue">
+                                        </div>
                         <div class="row">
-                            <div class="col-md-12">
-                                <!-- MAP DATA-->
-                                <div class="map-data m-b-40">
-                                    <h3 class="title-3 m-b-30">
-                                        <i class="zmdi zmdi-map"></i>map data</h3>
-                                    <div class="filters">
-                                        <div class="rs-select2--dark rs-select2--md m-r-10 rs-select2--border">
-                                            <select class="js-select2" name="property">
-                                                <option selected="selected">All Properties</option>
-                                                <option value="">Products</option>
-                                                <option value="">Services</option>
-                                            </select>
-                                            <div class="dropDownSelect2"></div>
-                                        </div>
-                                        <div class="rs-select2--dark rs-select2--sm rs-select2--border">
-                                            <select class="js-select2 au-select-dark" name="time">
-                                                <option selected="selected">All Time</option>
-                                                <option value="">By Month</option>
-                                                <option value="">By Day</option>
-                                            </select>
-                                            <div class="dropDownSelect2"></div>
-                                        </div>
-                                    </div>
-                                    <div class="map-wrap m-t-45 m-b-20">
-                                        <div id="vmap" style="height: 284px;"></div>
+                        <div class="container">
+                                <div class="login-wrap">
+                                    <div class="login-content">
+                                       
+                                        <!--<div class="login-form">-->
+                                            
+                                            <form action="Registrar_Cliente.php" method="POST">
+                                                <div class="form-group">
+                                                    <label>Identificación</label>
+                                                    <input class="au-input au-input--full" type="text" name="Identificacion" >
+                                                </div>
+                                                <div class="form-group">
+                                                    <label>Nombres y Apellidos</label>
+                                                    <input class="au-input au-input--full" type="text" name="nombre">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label>Barrio</label>
+                                                    <input class="au-input au-input--full" type="text" name="barrio">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label>Teléfono</label>
+                                                    <input class="au-input au-input--full" type="text" name="telefono">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label>Dirección</label>
+                                                    <input class="au-input au-input--full" type="text" name="direccion">
+                                                </div>
+                                                <!--<div class="login-checkbox">
+                                                    <label>
+                                                        <input type="checkbox" name="aggree">Agree the terms and policy
+                                                    </label>
+                                                </div>-->
+                                                <button class="au-btn au-btn--block au-btn--green m-b-20" type="submit">register</button>
+                                                <!--<div class="social-login-content">
+                                                    <div class="social-button">
+                                                        <button class="au-btn au-btn--block au-btn--blue m-b-20">register with facebook</button>
+                                                        <button class="au-btn au-btn--block au-btn--blue2">register with twitter</button>
+                                                    </div>
+                                                </div>-->
+                                            </form>
+                                            
+                                            <!--<div class="register-link">
+                                                <p>
+                                                    Already have account?
+                                                    <a href="#">Sign In</a>
+                                                </p>
+                                            </div>-->
+                                        <!--</div>-->
                                     </div>
                                 </div>
-                                <!-- END MAP DATA-->
                             </div>
                         </div>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <!-- MAP DATA-->
-                                <div class="map-data m-b-40">
-                                    <h3 class="title-3 m-b-30">
-                                        <i class="zmdi zmdi-map"></i>Europe</h3>
-                                    <div class="map-wrap">
-                                        <div class="vmap" id="vmap1"></div>
-                                    </div>
-                                </div>
-                                <!-- END MAP DATA-->
-                            </div>
-                            <div class="col-md-6">
-                                <!-- MAP DATA-->
-                                <div class="map-data m-b-40">
-                                    <h3 class="title-3 m-b-30">
-                                        <i class="zmdi zmdi-map"></i>USA</h3>
-                                    <div class="map-wrap">
-                                        <div class="vmap" id="vmap2"></div>
-                                    </div>
-                                </div>
-                                <!-- END MAP DATA-->
-                            </div>
-                            <div class="col-md-6">
-                                <!-- MAP DATA-->
-                                <div class="map-data m-b-40">
-                                    <h3 class="title-3 m-b-30">
-                                        <i class="zmdi zmdi-map"></i>Germany</h3>
-                                    <div class="map-wrap">
-                                        <div class="vmap" id="vmap3"></div>
-                                    </div>
-                                </div>
-                                <!-- END MAP DATA-->
-                            </div>
-                            <div class="col-md-6">
-                                <!-- MAP DATA-->
-                                <div class="map-data m-b-40">
-                                    <h3 class="title-3 m-b-30">
-                                        <i class="zmdi zmdi-map"></i>France</h3>
-                                    <div class="map-wrap">
-                                        <div class="vmap" id="vmap4"></div>
-                                    </div>
-                                </div>
-                                <!-- END MAP DATA-->
-                            </div>
-                            <div class="col-md-6">
-                                <!-- MAP DATA-->
-                                <div class="map-data m-b-40">
-                                    <h3 class="title-3 m-b-30">
-                                        <i class="zmdi zmdi-map"></i>Russia</h3>
-                                    <div class="map-wrap">
-                                        <div class="vmap" id="vmap5"></div>
-                                    </div>
-                                </div>
-                                <!-- END MAP DATA-->
-                            </div>
-                            <div class="col-md-6">
-                                <!-- MAP DATA-->
-                                <div class="map-data m-b-40">
-                                    <h3 class="title-3 m-b-30">
-                                        <i class="zmdi zmdi-map"></i>Brazil</h3>
-                                    <div class="map-wrap">
-                                        <div class="vmap" id="vmap6"></div>
-                                    </div>
-                                </div>
-                                <!-- END MAP DATA-->
-                                <!-- END PAGE CONTAINER-->
-                            </div>
                         </div>
                         <div class="row">
                             <div class="col-md-12">
